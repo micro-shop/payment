@@ -2,15 +2,15 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: shipping-db
+  name: payment
   labels:
-    name: shipping-db
+    name: payment
   namespace: default
 spec:
   ports:
     # the port that this service should serve on
-  - port: 27017
-    targetPort: 27017
+  - port: 80
+    targetPort: 80
   selector:
-    name: shipping-db
+    name: payment
 

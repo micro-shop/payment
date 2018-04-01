@@ -2,19 +2,19 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: shipping-db
+  name: payment-db
   labels:
-    name: shipping-db
+    name: payment-db
   namespace: default
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        name: shipping-db
+        name: payment-db
     spec:
       containers:
-      - name: shipping-db
+      - name: payment-db
         image: mongo
 
         ports:

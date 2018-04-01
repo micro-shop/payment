@@ -2,20 +2,20 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: shipping
+  name: payment
   labels:
-    name: shipping
+    name: payment
   namespace: default
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        name: shipping
+        name: payment
     spec:
       containers:
-      - name: shipping
-        image: microshop/shipping:latest
+      - name: payment
+        image: microshop/payment:latest
         env:
          - name: ZIPKIN
            value: zipkin.zipkin.svc.cluster.local

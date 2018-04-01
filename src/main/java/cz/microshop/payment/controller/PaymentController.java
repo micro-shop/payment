@@ -32,7 +32,7 @@ public class PaymentController {
 
     @RequestMapping(value = "/", method = RequestMethod.POST, produces = "application/json")
     public ResponseEntity<HttpStatus> process(@RequestBody Payment payment)   {
-        //save payment
+        paymentService.save(payment);
         PaymentSuccess paymentSuccess = new PaymentSuccess();
         paymentSuccess.setOrderId(payment.getOrderId());
         paymentSuccess.setStatus("ORDER_PAID");
