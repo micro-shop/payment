@@ -37,9 +37,6 @@ public class PaymentController {
         paymentSuccess.setOrderId(payment.getOrderId());
         paymentSuccess.setStatus("ORDER_PAID");
         rabbitTemplate.convertAndSend("rabbit-foo", paymentSuccess);
-
-
-        //return new ResponseEntity<>(paymentService.save(payment), HttpStatus.OK);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }
